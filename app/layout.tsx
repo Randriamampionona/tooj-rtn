@@ -1,9 +1,10 @@
 import "@/app/globals.css";
 import type { Metadata } from "next";
+import Navbar from "@/components/navbar/navbar";
 import { ThemeProvider } from "@/providers/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Toojrtn",
+  title: "Tooj Rtn",
   description: "The one way solution to build your dream project!",
 };
 
@@ -14,15 +15,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative">
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Navbar />
         </ThemeProvider>
+        {children}
       </body>
     </html>
   );

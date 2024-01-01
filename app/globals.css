@@ -5,7 +5,7 @@
 html,
 body,
 :root {
-  @apply h-dscreen w-full p-0 m-0 box-border;
+  @apply h-dscreen w-full dark:bg-neutral-900/80;
 }
 
 .hidden-scrollbar {
@@ -48,8 +48,6 @@ body,
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-
-    --primary-color: 19, 100%, 50%; /*#2563eb;*/
   }
 
   .dark {
@@ -80,24 +78,13 @@ body,
     --border: 226.7 12.7% 17.5%;
     --input: 226.7 12.7% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-
-    --primary-color: 19, 100%, 50%; /*#2563eb;*/
   }
 
   * {
     @apply border-border;
   }
 
-  :is(.dark html),
-  :is(.dark body),
-  :is(.dark :root) {
-    @apply !bg-bgDark;
-  }
-
   body {
     @apply bg-background text-foreground;
   }
-}
-
-@layer components {
 }
