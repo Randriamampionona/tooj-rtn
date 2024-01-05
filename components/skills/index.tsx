@@ -94,7 +94,7 @@ export default function Skills({ id }: TProps) {
             Tailwind CSS, Node.js, React.js, and Next.js, I sculpt seamless
             interfaces that come to life. <br />
             Into the data realm, I dive, architecting with MySQL, harnessing
-            Firebase's potential, and navigating WordPress and Prestashop
+            Firebase&apos;s potential, and navigating WordPress and Prestashop
             ecosystems effortlessly. In this symphony of technology, creativity
             meets functionality, shaping visions into captivating digital
             realities.

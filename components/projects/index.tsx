@@ -238,7 +238,7 @@ export default function Projects({ id }: TProps) {
       return data.filter((project) => !project.isPro);
     }
     return data;
-  }, [data, activeTab]);
+  }, [activeTab]);
 
   const onSwitch = (tab: Ttab) => {
     setActiveTab(tab);

@@ -26,7 +26,7 @@ export default function ContactDialog({
           <DialogTitle>
             <h1 className="inline-flex items-center font-bold text-xl mb-2 space-x-2">
               <HeartHandshake />
-              <span>Let's collaborate</span>
+              <span>Let&apos;s collaborate</span>
             </h1>
           </DialogTitle>
           {/* <DialogDescription></DialogDescription> */}

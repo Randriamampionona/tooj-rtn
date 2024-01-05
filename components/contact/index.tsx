@@ -41,8 +41,8 @@ export default function Contact({ id }: TProps) {
             />
 
             <p className="text-muted-foreground mb-4 text-center max-w-2xl mx-auto lg:mx-0 lg:text-start">
-              Let's build something incredible together. Reach out and let's
-              transform your ideas into digital masterpieces.
+              Let&apos;s build something incredible together. Reach out and
+              let&apos;s transform your ideas into digital masterpieces.
             </p>
 
             <div className="flex items-center justify-center flex-wrap gap-2 lg:flex-col lg:items-start">

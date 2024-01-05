@@ -71,7 +71,7 @@ export default function AboutMe({ id }: TProps) {
             <ContactDialog
               dialogTrigger={
                 <Button className="button_gradient h-12 px-6 font-bold space-x-6">
-                  <span>Let's collaborate</span>
+                  <span>Let&apos;s collaborate</span>
                   <ArrowRight size={17} />
                 </Button>
               }

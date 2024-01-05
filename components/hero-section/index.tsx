@@ -37,7 +37,7 @@ export default function HeroSection({ id }: TProps) {
         </div>
 
         <Button className="button_gradient h-12 px-6 font-bold space-x-6 mt-8">
-          <span>Let's Elevate Your Project</span>
+          <span>Let&apos;s Elevate Your Project</span>
           <ArrowRight size={17} />
         </Button>
       </section>

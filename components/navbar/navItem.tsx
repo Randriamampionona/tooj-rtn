@@ -37,7 +37,7 @@ export default function NavItem({ navitem }: TProps) {
     router.push(navitem.slug);
 
     scrollIntoView();
-    setIsOpen();
+    setIsOpen(false);
   };
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function NavItem({ navitem }: TProps) {
     setHash(formatedHash);
   }, [params]);
 
-  useEffect(() => scrollIntoView(), [hash]);
+  useEffect(() => scrollIntoView(), [hash, scrollIntoView]);
 
   return (
     <li

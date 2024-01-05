@@ -2,16 +2,16 @@ import { create } from "zustand";
 
 type TState = {
   isOpen: boolean;
-  setIsOpen: () => void;
+  setIsOpen: (value?: boolean) => void;
 };
 
 export const menuStore = create<TState>((set, _get) => ({
   isOpen: false,
 
-  setIsOpen: () => {
+  setIsOpen: (value?: boolean) => {
     set((state) => ({
       ...state,
-      isOpen: !state.isOpen,
+      isOpen: value ?? !state.isOpen,
     }));
   },
 }));

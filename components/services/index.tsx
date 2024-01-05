@@ -52,9 +52,9 @@ export default function Services({ id }: TProps) {
           <p>
             Embark on a digital journey where deployment is flawless, interfaces
             weave tales, databases stand strong, and maintenance ensures a
-            perpetual top-tier user experience. I'm the navigator behind the
-            scenes, crafting captivating experiences and fortifying your digital
-            realm for seamless adventures.
+            perpetual top-tier user experience. I&apos;m the navigator behind
+            the scenes, crafting captivating experiences and fortifying your
+            digital realm for seamless adventures.
           </p>
         </div>
 
