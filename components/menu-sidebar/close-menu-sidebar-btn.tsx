@@ -14,7 +14,7 @@ export default function CloseMenuSidebarBtn({}: TProps) {
       variant="outline"
       size="icon"
       className="w-6 h-6 text-muted-foreground"
-      onClick={setIsOpen}
+      onClick={() => setIsOpen()}
     >
       <X size={17} />
     </Button>
