@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { inViewStore } from "@/store/in-view.store";
+import { menuStore } from "@/store/menu.store";
 import { useParams, useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
@@ -14,6 +15,8 @@ type TProps = {
 
 export default function NavItem({ navitem }: TProps) {
   const { sectionName } = inViewStore((state) => state);
+  const { setIsOpen } = menuStore((state) => state);
+
   const params = useParams();
   const router = useRouter();
   const [hash, setHash] = useState("");
@@ -34,6 +37,7 @@ export default function NavItem({ navitem }: TProps) {
     router.push(navitem.slug);
 
     scrollIntoView();
+    setIsOpen();
   };
 
   useEffect(() => {
@@ -49,7 +53,7 @@ export default function NavItem({ navitem }: TProps) {
   return (
     <li
       className={cn(
-        "relative hover:text-orange-600 transition-all duration-150 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-1/2 after:h-1 after:bg-orange-600 after:rounded-full cursor-pointer after:transition-all after:duration-150",
+        "relative w-fit hover:text-orange-600 transition-all duration-150 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-1/2 after:h-1 after:bg-orange-600 after:rounded-full cursor-pointer after:transition-all after:duration-150",
         navitemHash === sectionName &&
           "text-orange-600 font-semibold after:w-1/2"
       )}

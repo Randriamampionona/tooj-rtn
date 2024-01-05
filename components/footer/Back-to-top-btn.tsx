@@ -3,14 +3,18 @@
 import { Button } from "@/components//ui/button";
 import Hint from "@/components/hint";
 import { ArrowUp } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type TProps = {};
 
 export default function BackToTopBtn({}: TProps) {
+  const router = useRouter();
   const onClick = () => {
     const element = document.getElementById("hero-section");
 
     if (!element) return;
+
+    router.push("/");
 
     element.scrollIntoView({
       behavior: "smooth",
