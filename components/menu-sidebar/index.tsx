@@ -32,7 +32,7 @@ export default function MenuSidebar({ navlinks }: TProps) {
       {isOpen && (
         <div
           className="fixed inset-0 bg-neutral-950/50 z-20"
-          onClick={setIsOpen}
+          onClick={() => setIsOpen()}
         />
       )}
       <aside
