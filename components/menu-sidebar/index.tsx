@@ -40,9 +40,6 @@ export default function MenuSidebar({ navlinks }: TProps) {
           "fixed top-0 -right-80 flex flex-col justify-between w-full max-h-screen h-screen max-w-xs p-4 bg-slate-50 dark:bg-neutral-950 space-y-12 z-30",
           isOpen && "right-0 transition-all duration-150"
         )}
-        style={{
-          boxShadow: "0px 0px 22px -5px rgb(10 10 10 / 1)",
-        }}
       >
         <div className="flex items-center justify-between">
           <div>
