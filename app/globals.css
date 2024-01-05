@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::before,
+*::after {
+  @apply p-0 m-0 box-border;
+}
+
 html,
 body,
 :root {
@@ -86,5 +92,27 @@ body,
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply w-full max-w-full mx-auto sm:max-w-3xl lg:max-w-5xl;
+  }
+
+  .section {
+    @apply flex flex-col lg:flex-row items-center justify-center lg:min-h-dscreen px-2 lg:px-4;
+  }
+
+  .text_gradient {
+    @apply bg-gradient-to-r from-pink-600 to-orange-600 text-transparent bg-clip-text;
+  }
+
+  .button_gradient {
+    @apply relative bg-gradient-to-r from-fuchsia-900 to-rose-700 !text-slate-50 before:absolute before:w-full before:h-full before:-z-10 before:bg-gradient-to-r before:from-fuchsia-900 before:to-rose-700 before:left-0 before:top-0 before:blur-[7px] hover:before:blur-sm before:transition-all before:duration-500 before:ease-in-out;
+  }
+
+  .blob {
+    @apply relative opacity-[0.15] dark:opacity-10 w-48 h-48 bg-sky-600 rounded-blob blur-3xl;
   }
 }

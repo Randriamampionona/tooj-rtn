@@ -1,0 +1,11 @@
+---
+
+*Armed with the tools of digital craftsmanship, I wield the trinity of HTML, CSS, and JavaScript as my artistic palette, sketching intuitive and captivating web experiences. Beyond the basics, I traverse the frontiers of ES6+ and Typescript, infusing dynamism into every line of code.*
+
+*My canvas extends beyond the browser—embracing the power of Tailwind CSS for streamlined designs and the versatility of Node.js for backend sorcery. With React.js and Next.js, I sculpt seamless user interfaces and navigate the ever-evolving digital landscape.*
+
+*Deep in the data realm, I architect robust systems with MySQL, harness the boundless potential of Firebase, and navigate the ecosystems of WordPress and Prestashop, crafting digital realms where functionality meets finesse.*
+
+*In the symphony of web development, I orchestrate harmonies between technologies, blending artistry with functionality to bring visions to life in pixels and code.*
+
+---

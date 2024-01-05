@@ -1,0 +1,70 @@
+<section class="services-section bg-gray-100 py-12">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">My Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Service Item: Dev Ops -->
+      <div class="service-item bg-white rounded-lg p-6 shadow-md">
+        <h3 class="text-xl font-semibold mb-4">Dev Ops</h3>
+        <p class="text-gray-700 mb-4">Efficient deployment strategies to optimize your web projects.</p>
+        <!-- You can add more details here -->
+      </div>
+      <!-- Service Item: UI/UX -->
+      <div class="service-item bg-white rounded-lg p-6 shadow-md">
+        <h3 class="text-xl font-semibold mb-4">UI/UX</h3>
+        <p class="text-gray-700 mb-4">Crafting captivating user experiences with stunning interfaces.</p>
+        <!-- You can add more details here -->
+      </div>
+      <!-- Service Item: Database & Server -->
+      <div class="service-item bg-white rounded-lg p-6 shadow-md">
+        <h3 class="text-xl font-semibold mb-4">Database & Server</h3>
+        <p class="text-gray-700 mb-4">Building robust databases and servers for seamless functionality.</p>
+        <!-- You can add more details here -->
+      </div>
+      <!-- Service Item: Maintenance -->
+      <div class="service-item bg-white rounded-lg p-6 shadow-md">
+        <h3 class="text-xl font-semibold mb-4">Maintenance</h3>
+        <p class="text-gray-700 mb-4">Ensuring the continuous smooth operation of your web applications.</p>
+        <!-- You can add more details here -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+**Dev Ops (Deployment)**  
+*"Navigating the digital skies demands more than just code; it requires a flawless flight plan. Let me orchestrate your project's takeoff with streamlined deployment strategies. From staging to launch, I ensure a smooth ascent into the digital stratosphere."*
+
+**UI/UX (User Interface & Experience)**  
+*"In a world where pixels tell stories, I craft digital landscapes that captivate and engage. Seamlessly blending art and functionality, I sculpt interfaces that guide users through immersive experiences, turning clicks into journeys."*
+
+**Database & Server**  
+*"Foundations matter—the heartbeat of your application resides in its backend. I engineer robust databases and servers, fortifying your platform with reliability and agility, ensuring it stands firm amid digital tides."*
+
+**Maintenance**  
+*"Building is just the beginning; the true testament lies in continuous refinement. I pledge to safeguard your digital domain, perpetually nurturing its performance to ensure an evergreen, top-tier user experience."*
+
+---
+
+
+
+
+
+
+
+
+
+
+Embark on a digital journey where deployment is flawless, interfaces weave tales, databases stand strong, and maintenance ensures a perpetual top-tier user experience. I'm the navigator behind the scenes, crafting captivating experiences and fortifying your digital realm for seamless adventures.

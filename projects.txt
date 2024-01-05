@@ -1,0 +1,76 @@
+Create a tabe switch using tailwind css to display a card showcasing my project.
+
+data:
+tab n.o1: tab name is Professional, projects lesfrancophones.com (tech: WordPress), autofunnel.io (tech: Next js), montreautomatoque.com (tech: WordPress), conteenium.com (tech: WordPress), maisonetmoi (tech: WordPress).
+
+tab n.o2: tab name is personal, projects facebook2-by-rtn.vercel.app (tech: nextjs), rohy-server.vercel.app (tech: Node Js), rohy.vercel.app (tech: nextjs),  mirentymg.vercel.app (tech: NextJs), hi-tafa.vercel.app (tech: next js), tubi.vercel.app (tech: nextjs) and lastly groove-music-clone.vercel.app (tech: nextjs).
+
+Do it nicely and modern.
+
+
+
+
+
+
+
+
+
+import { useState } from 'react';
+
+const Projects = () => {
+  const [activeTab, setActiveTab] = useState('professional');
+
+  const professionalProjects = [
+    { name: 'lesfrancophones.com', tech: 'WordPress' },
+    { name: 'autofunnel.io', tech: 'Next.js' },
+    // Add other professional projects
+  ];
+
+  const personalProjects = [
+    { name: 'facebook2-by-rtn.vercel.app', tech: 'Next.js' },
+    { name: 'rohy-server.vercel.app', tech: 'Node.js' },
+    // Add other personal projects
+  ];
+
+  const displayProjects = (projects) => {
+    return projects.map((project, index) => (
+      <div key={index} className="bg-white shadow-lg rounded-lg p-6">
+        <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+        <p className="text-gray-600">{project.tech}</p>
+      </div>
+    ));
+  };
+
+  return (
+    <div className="container mx-auto py-8">
+      <div className="flex justify-center mb-8">
+        <button
+          onClick={() => setActiveTab('professional')}
+          className={`mr-2 px-4 py-2 rounded focus:outline-none ${
+            activeTab === 'professional'
+              ? 'bg-blue-500 text-white hover:bg-blue-600 focus:bg-blue-600'
+              : 'bg-gray-300 text-gray-700 hover:bg-gray-400 focus:bg-gray-400'
+          }`}
+        >
+          Professional
+        </button>
+        <button
+          onClick={() => setActiveTab('personal')}
+          className={`px-4 py-2 rounded focus:outline-none ${
+            activeTab === 'personal'
+              ? 'bg-blue-500 text-white hover:bg-blue-600 focus:bg-blue-600'
+              : 'bg-gray-300 text-gray-700 hover:bg-gray-400 focus:bg-gray-400'
+          }`}
+        >
+          Personal
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects">
+        {activeTab === 'professional' ? displayProjects(professionalProjects) : displayProjects(personalProjects)}
+      </div>
+    </div>
+  );
+};
+
+export default Projects;

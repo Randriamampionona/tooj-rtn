@@ -55,6 +55,7 @@ module.exports = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        blob: "83% 40% 37% 95% / 76% 50% 58% 55%",
       },
       keyframes: {
         "accordion-down": {
@@ -71,7 +72,10 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       height: {
-        dscreen: "100dvh",
+        dscreen: "calc(100dvh - 3rem)",
+      },
+      minHeight: {
+        dscreen: "calc(100dvh - 3rem)",
       },
     },
   },
