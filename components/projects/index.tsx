@@ -5,6 +5,7 @@ import ProjetcCard from "./projetc-card";
 import { Button } from "@/components/ui/button";
 import { useCallback, useState } from "react";
 import { cn } from "@/lib/utils";
+import InViewProvider from "@/providers/in-view-provider";
 
 type TProps = {
   id: string;
@@ -244,45 +245,47 @@ export default function Projects({ id }: TProps) {
   };
 
   return (
-    <section className="section" id={id}>
-      <div className="flex flex-col items-center justify-center space-y-6">
-        <HeadingSection
-          heading="My portfolio adventures"
-          className="text-center"
-        />
+    <InViewProvider section_ID={id}>
+      <section className="section" id={id}>
+        <div className="flex flex-col items-center justify-center space-y-6">
+          <HeadingSection
+            heading="My portfolio adventures"
+            className="text-center"
+          />
 
-        <div className="space-y-4">
-          <div className="flex items-center justify-center space-x-4">
-            <Button
-              variant="link"
-              onClick={() => onSwitch("all")}
-              className={cn(activeTab === "all" && "underline")}
-            >
-              All
-            </Button>
-            <Button
-              variant="link"
-              onClick={() => onSwitch("professional")}
-              className={cn(activeTab === "professional" && "underline")}
-            >
-              Professional
-            </Button>
-            <Button
-              variant="link"
-              onClick={() => onSwitch("personal")}
-              className={cn(activeTab === "personal" && "underline")}
-            >
-              Personal
-            </Button>
-          </div>
+          <div className="space-y-4">
+            <div className="flex items-center justify-center space-x-4">
+              <Button
+                variant="link"
+                onClick={() => onSwitch("all")}
+                className={cn(activeTab === "all" && "underline")}
+              >
+                All
+              </Button>
+              <Button
+                variant="link"
+                onClick={() => onSwitch("professional")}
+                className={cn(activeTab === "professional" && "underline")}
+              >
+                Professional
+              </Button>
+              <Button
+                variant="link"
+                onClick={() => onSwitch("personal")}
+                className={cn(activeTab === "personal" && "underline")}
+              >
+                Personal
+              </Button>
+            </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {projectTab().map((project) => (
-              <ProjetcCard key={project.url} project={project} />
-            ))}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {projectTab().map((project) => (
+                <ProjetcCard key={project.url} project={project} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </InViewProvider>
   );
 }

@@ -1,9 +1,9 @@
-import AboutMe from "@/components/about-me";
-import Contact from "@/components/contact";
 import HeroSection from "@/components/hero-section";
-import Projects from "@/components/projects";
+import AboutMe from "@/components/about-me";
 import Services from "@/components/services";
 import Skills from "@/components/skills";
+import Projects from "@/components/projects";
+import Contact from "@/components/contact";
 
 type TProps = {};
 

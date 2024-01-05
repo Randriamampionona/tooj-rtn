@@ -1,6 +1,7 @@
 import HeadingSection from "@/components/heading-section";
 import ServiceCard from "./service-card";
 import { AppWindowIcon, GitFork, Server, WrenchIcon } from "lucide-react";
+import InViewProvider from "@/providers/in-view-provider";
 
 type TProps = {
   id: string;
@@ -44,23 +45,25 @@ const data = [
 
 export default function Services({ id }: TProps) {
   return (
-    <section className="section gap-8" id={id}>
-      <div className="text-center lg:text-start w-full lg:w-1/2">
-        <HeadingSection heading="What do I offer?" />
-        <p>
-          Embark on a digital journey where deployment is flawless, interfaces
-          weave tales, databases stand strong, and maintenance ensures a
-          perpetual top-tier user experience. I'm the navigator behind the
-          scenes, crafting captivating experiences and fortifying your digital
-          realm for seamless adventures.
-        </p>
-      </div>
+    <InViewProvider section_ID={id}>
+      <section className="section gap-8" id={id}>
+        <div className="text-center lg:text-start w-full lg:w-1/2">
+          <HeadingSection heading="What do I offer?" />
+          <p>
+            Embark on a digital journey where deployment is flawless, interfaces
+            weave tales, databases stand strong, and maintenance ensures a
+            perpetual top-tier user experience. I'm the navigator behind the
+            scenes, crafting captivating experiences and fortifying your digital
+            realm for seamless adventures.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-2 gap-4 w-full lg:w-1/2">
-        {data.map((service) => (
-          <ServiceCard key={service.id} service={service} />
-        ))}
-      </div>
-    </section>
+        <div className="grid grid-cols-2 gap-4 w-full lg:w-1/2">
+          {data.map((service) => (
+            <ServiceCard key={service.id} service={service} />
+          ))}
+        </div>
+      </section>
+    </InViewProvider>
   );
 }
