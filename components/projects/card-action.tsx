@@ -20,7 +20,7 @@ export default function CardAction({ git_repo, url }: TProps) {
           <LinkIcon />
         </Button>
       </Link>
-      {git_repo && (
+      {git_repo ? (
         <Link
           href={git_repo}
           prefetch={false}
@@ -31,6 +31,10 @@ export default function CardAction({ git_repo, url }: TProps) {
             <Github />
           </Button>
         </Link>
+      ) : (
+        <Button size="icon" disabled>
+          <Github />
+        </Button>
       )}
     </div>
   );
