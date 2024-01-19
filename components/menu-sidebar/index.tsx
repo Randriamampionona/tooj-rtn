@@ -62,6 +62,7 @@ export default function MenuSidebar({ navlinks }: TProps) {
 
           <div className="flex-1 flex flex-col justify-end space-y-4">
             <ContactDialog
+              dialogTitle="Let's collaborate"
               dialogTrigger={
                 <Button className="button_gradient h-12 px-6 font-bold space-x-6">
                   <span>Let&apos;s collaborate</span>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { TProject } from ".";
 import { CalendarRange, Code2 } from "lucide-react";
 import Link from "next/link";
 import TechStack from "./tech-stack";

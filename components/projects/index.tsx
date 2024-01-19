@@ -3,13 +3,7 @@
 import HeadingSection from "@/components/heading-section";
 import ProjetcCard from "./projetc-card";
 import { Button } from "@/components/ui/button";
-import {
-  Suspense,
-  useCallback,
-  useEffect,
-  useState,
-  useTransition,
-} from "react";
+import { useEffect, useState, useTransition } from "react";
 import { cn } from "@/lib/utils";
 import InViewProvider from "@/providers/in-view-provider";
 import getProject from "@/action/get-project";
