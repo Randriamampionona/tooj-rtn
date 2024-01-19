@@ -4,7 +4,7 @@ import Link from "next/link";
 import NavItem from "@/components/navbar/navItem";
 import CloseMenuSidebarBtn from "./close-menu-sidebar-btn";
 import { Button } from "@/components/ui/button";
-import ContactDialog from "@/components/about-me/contact-dialog";
+import ContactDialog from "@/components/contact/contact-dialog";
 import ContactForm from "@/components/contact/contact-form";
 import { ArrowRight, Download } from "lucide-react";
 import { menuStore } from "@/store/menu.store";

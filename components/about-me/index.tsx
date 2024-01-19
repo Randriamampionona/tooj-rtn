@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import HeadingSection from "@/components/heading-section";
 import AccumulationNumber from "./accumulation-number";
 import { ArrowRight, Download, Info } from "lucide-react";
-import ContactDialog from "./contact-dialog";
+import ContactDialog from "../contact/contact-dialog";
 import ContactForm from "@/components/contact/contact-form";
 import InViewProvider from "@/providers/in-view-provider";
 
@@ -69,6 +69,7 @@ export default function AboutMe({ id }: TProps) {
 
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
             <ContactDialog
+              dialogTitle="Let's collaborate"
               dialogTrigger={
                 <Button className="button_gradient h-12 px-6 font-bold space-x-6">
                   <span>Let&apos;s collaborate</span>

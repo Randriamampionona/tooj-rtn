@@ -2,6 +2,8 @@ import { ArrowRight } from "lucide-react";
 import Hint from "@/components/hint";
 import { Button } from "@/components/ui/button";
 import InViewProvider from "@/providers/in-view-provider";
+import ContactDialog from "@/components/contact/contact-dialog";
+import ContactForm from "@/components/contact/contact-form";
 
 type TProps = {
   id: string;
@@ -36,10 +38,25 @@ export default function HeroSection({ id }: TProps) {
           </p>
         </div>
 
-        <Button className="button_gradient h-12 px-6 font-bold space-x-6 mt-8">
-          <span>Let&apos;s Elevate Your Project</span>
-          <ArrowRight size={17} />
-        </Button>
+        <ContactDialog
+          dialogTitle="Let's Elevate Your Project"
+          dialogTrigger={
+            <Button className="button_gradient h-12 px-6 font-bold space-x-6 mt-8">
+              <span>Let&apos;s Elevate Your Project</span>
+              <ArrowRight size={17} />
+            </Button>
+          }
+          dialogContent={
+            <ContactForm
+              defaultState={{
+                name: "",
+                email: "",
+                message: "",
+              }}
+              className="w-full max-w-full"
+            />
+          }
+        />
       </section>
     </InViewProvider>
   );

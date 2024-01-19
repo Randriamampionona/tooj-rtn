@@ -1,7 +1,6 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -11,11 +10,13 @@ import { HeartHandshake } from "lucide-react";
 type TProps = {
   dialogTrigger: JSX.Element;
   dialogContent: JSX.Element;
+  dialogTitle: string;
 };
 
 export default function ContactDialog({
   dialogTrigger,
   dialogContent,
+  dialogTitle,
 }: TProps) {
   return (
     <Dialog>
@@ -26,10 +27,9 @@ export default function ContactDialog({
           <DialogTitle>
             <h1 className="inline-flex items-center font-bold text-xl mb-2 space-x-2">
               <HeartHandshake />
-              <span>Let&apos;s collaborate</span>
+              <span>{dialogTitle}</span>
             </h1>
           </DialogTitle>
-          {/* <DialogDescription></DialogDescription> */}
         </DialogHeader>
 
         <div className="flex items-center space-x-2">{dialogContent}</div>
