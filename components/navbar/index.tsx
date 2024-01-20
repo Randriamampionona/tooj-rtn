@@ -36,7 +36,7 @@ export default function Navbar({}: TProps) {
     <>
       <MenuSidebar navlinks={navlinks} />
 
-      <nav className="fixed top-0 left-0 right-0 flex items-center justify-between wrapper h-12 bg-transparent backdrop-blur p-2 lg:px-4 z-10">
+      <nav className="fixed top-0 left-0 right-0 flex items-center justify-between wrapper h-12 bg-transparent backdrop-blur-lg p-2 lg:px-4 z-10">
         <div>
           <Link href="/" className="font-extrabold text-xl">
             Tooj<span className="text-sky-600">.</span>

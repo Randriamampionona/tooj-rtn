@@ -5,7 +5,6 @@ import HeadingSection from "@/components/heading-section";
 import AccumulationNumber from "./accumulation-number";
 import { ArrowRight, Download, Info } from "lucide-react";
 import ContactDialog from "../contact/contact-dialog";
-import ContactForm from "@/components/contact/contact-form";
 import InViewProvider from "@/providers/in-view-provider";
 
 type TProps = {
@@ -75,16 +74,6 @@ export default function AboutMe({ id }: TProps) {
                   <span>Let&apos;s collaborate</span>
                   <ArrowRight size={17} />
                 </Button>
-              }
-              dialogContent={
-                <ContactForm
-                  defaultState={{
-                    name: "",
-                    email: "",
-                    message: "",
-                  }}
-                  className="w-full max-w-full"
-                />
               }
             />
 

@@ -28,7 +28,7 @@ export default function RootLayout({
           <Navbar />
           <Blobs />
           <main className="wrapper pt-12 space-y-20 lg:space-y-0">
-            <Toaster theme="system" position="top-right" />
+            <Toaster position="bottom-right" />
             {children}
           </main>
           <Footer className="mt-20 lg:mt-0" />

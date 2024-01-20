@@ -16,13 +16,18 @@ type TValues = {
 };
 
 type TProps = {
+  close_dialog?: () => void;
   defaultState: TValues;
   className?: string;
 };
 
 type TEvents = ChangeEvent<HTMLTextAreaElement> | ChangeEvent<HTMLInputElement>;
 
-export default function ContactForm({ defaultState, className }: TProps) {
+export default function ContactForm({
+  close_dialog,
+  defaultState,
+  className,
+}: TProps) {
   const [values, setValues] = useState<TValues>(defaultState);
   const [isSending, setIsSending] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -61,6 +66,7 @@ export default function ContactForm({ defaultState, className }: TProps) {
     } finally {
       setValues(defaultState);
       setIsSending(false);
+      close_dialog?.();
     }
   };
 
