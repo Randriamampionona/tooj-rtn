@@ -7,7 +7,6 @@ import { Loader2, Mail, SendHorizonal, User } from "lucide-react";
 import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { toastify } from "@/lib/toastify";
-import sendEmail from "@/action/send-email";
 import emailjs from "@emailjs/browser";
 
 type TValues = {
@@ -26,7 +25,7 @@ type TEvents = ChangeEvent<HTMLTextAreaElement> | ChangeEvent<HTMLInputElement>;
 export default function ContactForm({ defaultState, className }: TProps) {
   const [values, setValues] = useState<TValues>(defaultState);
   const [isSending, setIsSending] = useState(false);
-  const formRef = useRef<any>(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   const handlerChange = (e: TEvents) => {
     setValues((prev) => ({
@@ -40,28 +39,24 @@ export default function ContactForm({ defaultState, className }: TProps) {
 
     if (!values.email.trim() || !values.message.trim()) return;
 
+    if (!formRef.current) return;
+
     try {
       setIsSending(true);
 
-      // const result = await emailjs.sendForm(
-      //   process.env.NEXT_PUBLIC_SERVICE_ID!,
-      //   process.env.NEXT_PUBLIC_TEMPLATE_ID!,
-      //   formRef.current,
-      //   process.env.NEXT_PUBLIC_KEY!
-      // );
-
-      await sendEmail({
-        name: values.name,
-        from: values.email,
-        text: values.message,
-      });
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_KEY!
+      );
 
       toastify({
-        message: "Email sent",
+        message: `Thanks for reaching me out, I will come back to you ASAP`,
       });
     } catch (error: any) {
       toastify({
-        message: error.message,
+        message: "Something went wrong, try again later",
       });
     } finally {
       setValues(defaultState);
