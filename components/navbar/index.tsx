@@ -5,7 +5,6 @@ import ThemeToogle from "./theme-toogle";
 import { Github } from "lucide-react";
 import NavItem from "./navItem";
 import HumburgerButton from "./humburger-button";
-import Logo from "./logo";
 
 type TProps = {};
 
@@ -38,7 +37,11 @@ export default function Navbar({}: TProps) {
       <MenuSidebar navlinks={navlinks} />
 
       <nav className="fixed top-0 left-0 right-0 flex items-center justify-between wrapper h-12 bg-transparent backdrop-blur p-2 lg:px-4 z-10">
-        <Logo />
+        <div>
+          <Link href="/" className="font-extrabold text-xl">
+            Tooj<span className="text-sky-600">.</span>
+          </Link>
+        </div>
 
         <ul className="flex-1 w-full hidden lg:flex items-center justify-center space-x-6">
           {navlinks.map((navitem) => (
