@@ -43,15 +43,21 @@ export default function ContactForm({ defaultState, className }: TProps) {
     try {
       setIsSending(true);
 
-      const result = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
-        formRef.current,
-        process.env.NEXT_PUBLIC_KEY!
-      );
+      // const result = await emailjs.sendForm(
+      //   process.env.NEXT_PUBLIC_SERVICE_ID!,
+      //   process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+      //   formRef.current,
+      //   process.env.NEXT_PUBLIC_KEY!
+      // );
+
+      await sendEmail({
+        name: values.name,
+        from: values.email,
+        text: values.message,
+      });
 
       toastify({
-        message: result.text,
+        message: "Email sent",
       });
     } catch (error: any) {
       toastify({
