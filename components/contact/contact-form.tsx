@@ -3,11 +3,12 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Mail, SendHorizonal, User } from "lucide-react";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { Loader2, Mail, SendHorizonal, User } from "lucide-react";
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import sendEmail from "@/action/resend";
 import { toastify } from "@/lib/toastify";
+import sendEmail from "@/action/send-email";
+import emailjs from "@emailjs/browser";
 
 type TValues = {
   name: string;
@@ -25,6 +26,7 @@ type TEvents = ChangeEvent<HTMLTextAreaElement> | ChangeEvent<HTMLInputElement>;
 export default function ContactForm({ defaultState, className }: TProps) {
   const [values, setValues] = useState<TValues>(defaultState);
   const [isSending, setIsSending] = useState(false);
+  const formRef = useRef<any>(null);
 
   const handlerChange = (e: TEvents) => {
     setValues((prev) => ({
@@ -40,14 +42,16 @@ export default function ContactForm({ defaultState, className }: TProps) {
 
     try {
       setIsSending(true);
-      const { message } = await sendEmail({
-        name: values.name,
-        sender: values.email,
-        text: values.message,
-      });
+
+      const result = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_KEY!
+      );
 
       toastify({
-        message,
+        message: result.text,
       });
     } catch (error: any) {
       toastify({
@@ -61,6 +65,7 @@ export default function ContactForm({ defaultState, className }: TProps) {
 
   return (
     <form
+      ref={formRef}
       className={cn("max-w-sm mx-auto space-y-2", className ?? className)}
       onSubmit={onSubmit}
     >
@@ -121,8 +126,9 @@ export default function ContactForm({ defaultState, className }: TProps) {
         className="button_gradient w-full lg:w-auto h-12 px-6 font-bold space-x-2 !mt-4"
         disabled={isSending}
       >
+        {isSending && <Loader2 size={17} className="animate-spin" />}
         <span>{isSending ? "Sending..." : "Send"}</span>
-        <SendHorizonal size={17} />
+        {!isSending && <SendHorizonal size={17} />}
       </Button>
     </form>
   );
