@@ -57,11 +57,13 @@ export default function ContactForm({
       );
 
       toastify({
+        type: "success",
         message: `Thanks for reaching me out, I will come back to you ASAP`,
       });
       close_dialog?.();
     } catch (error: any) {
       toastify({
+        type: "error",
         message: "Something went wrong, try again later",
       });
       close_dialog?.();
