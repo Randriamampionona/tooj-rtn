@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Mail, SendHorizonal, User } from "lucide-react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { cn } from "@/lib/utils";
+import sendEmail from "@/action/resend";
+import { toastify } from "@/lib/toastify";
 
 type TValues = {
   name: string;
@@ -22,6 +24,7 @@ type TEvents = ChangeEvent<HTMLTextAreaElement> | ChangeEvent<HTMLInputElement>;
 
 export default function ContactForm({ defaultState, className }: TProps) {
   const [values, setValues] = useState<TValues>(defaultState);
+  const [isSending, setIsSending] = useState(false);
 
   const handlerChange = (e: TEvents) => {
     setValues((prev) => ({
@@ -33,7 +36,27 @@ export default function ContactForm({ defaultState, className }: TProps) {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setValues(defaultState);
+    if (!values.email.trim() || !values.message.trim()) return;
+
+    try {
+      setIsSending(true);
+      const { message } = await sendEmail({
+        name: values.name,
+        sender: values.email,
+        text: values.message,
+      });
+
+      toastify({
+        message,
+      });
+    } catch (error: any) {
+      toastify({
+        message: error.message,
+      });
+    } finally {
+      setValues(defaultState);
+      setIsSending(false);
+    }
   };
 
   return (
@@ -94,8 +117,11 @@ export default function ContactForm({ defaultState, className }: TProps) {
         />
       </div>
 
-      <Button className="button_gradient w-full lg:w-auto h-12 px-6 font-bold space-x-2 !mt-4">
-        <span>Send</span>
+      <Button
+        className="button_gradient w-full lg:w-auto h-12 px-6 font-bold space-x-2 !mt-4"
+        disabled={isSending}
+      >
+        <span>{isSending ? "Sending..." : "Send"}</span>
         <SendHorizonal size={17} />
       </Button>
     </form>
