@@ -59,14 +59,15 @@ export default function ContactForm({
       toastify({
         message: `Thanks for reaching me out, I will come back to you ASAP`,
       });
+      close_dialog?.();
     } catch (error: any) {
       toastify({
         message: "Something went wrong, try again later",
       });
+      close_dialog?.();
     } finally {
       setValues(defaultState);
       setIsSending(false);
-      close_dialog?.();
     }
   };
 
