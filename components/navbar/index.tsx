@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import MenuSidebar from "@/components/menu-sidebar";
 import ThemeToogle from "./theme-toogle";
 import { Github } from "lucide-react";
-import Logo from "./logo";
 import NavItem from "./navItem";
 import HumburgerButton from "./humburger-button";
+import Logo from "./logo";
 
 type TProps = {};
 
