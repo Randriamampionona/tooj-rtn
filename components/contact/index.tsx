@@ -25,7 +25,7 @@ const data = {
   social: {
     Icon: Facebook,
     text: "@toojrtn",
-    url: "https://facebook.com/@toojrtn",
+    url: "https://github.com/Randriamampionona",
   },
 };
 

@@ -29,13 +29,15 @@ export default function ServiceDialog({
 
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>
-            <h1 className="inline-flex items-center font-bold text-xl mb-2 space-x-2">
+          <DialogTitle className="text-start">
+            <h1 className="inline-flex font-bold text-xl mb-2 space-x-2">
               <dialogContent.Icon />
               <span>{dialogContent.title}</span>
             </h1>
           </DialogTitle>
-          <DialogDescription>{dialogContent.exerpt}</DialogDescription>
+          <DialogDescription className="text-start">
+            {dialogContent.exerpt}
+          </DialogDescription>
         </DialogHeader>
 
         <div className="flex items-center space-x-2">

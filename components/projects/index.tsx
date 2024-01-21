@@ -63,7 +63,6 @@ export default function Projects({ id }: TProps) {
             </div>
 
             {isPending && <p>Loading...</p>}
-
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {project.map((project) => (
                 <ProjetcCard key={project.url} project={project} />

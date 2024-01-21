@@ -72,10 +72,10 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       height: {
-        dscreen: "calc(100dvh - 3rem)",
+        dscreen: "calc(100vh - 3rem)",
       },
       minHeight: {
-        dscreen: "calc(100dvh - 3rem)",
+        dscreen: "calc(100vh - 3rem)",
       },
     },
   },

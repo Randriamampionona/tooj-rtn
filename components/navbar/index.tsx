@@ -52,7 +52,7 @@ export default function Navbar({}: TProps) {
         <div className="flex items-center space-x-2">
           <ThemeToogle />
           <Link
-            href="https://github.com/@toojrtn"
+            href="https://github.com/Randriamampionona"
             prefetch={false}
             target="_blank"
             rel="noopener noreferrer"
