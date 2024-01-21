@@ -8,6 +8,8 @@ import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { toastify } from "@/lib/toastify";
 import emailjs from "@emailjs/browser";
+import setAntiSpam from "@/action/set-anti-spam";
+import getAntiSpam from "@/action/get-anti-spam";
 
 type TValues = {
   name: string;
@@ -46,6 +48,23 @@ export default function ContactForm({
 
     if (!formRef.current) return;
 
+    // check if spamming
+    const { is_spamming, timer } = await getAntiSpam();
+
+    if (is_spamming) {
+      toastify({
+        type: "info",
+        message:
+          "Please do not spam to maintain a clean and enjoyable chat environment for everyone.",
+        action: {
+          label: `Resend in ${timer}s`,
+          onClick: () => {},
+        },
+      });
+
+      return;
+    }
+
     try {
       setIsSending(true);
 
@@ -56,9 +75,12 @@ export default function ContactForm({
         process.env.NEXT_PUBLIC_KEY!
       );
 
+      // set anti spam if success
+      await setAntiSpam({ email: values.email });
+
       toastify({
         type: "success",
-        message: `Thanks for reaching me out, I will come back to you ASAP`,
+        message: "Thanks for reaching me out, I will get to you ASAP",
       });
       close_dialog?.();
     } catch (error: any) {
