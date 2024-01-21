@@ -7,7 +7,7 @@ import Contact from "@/components/contact";
 
 type TProps = {};
 
-export default function LadingPage({}: TProps) {
+export default async function LadingPage({}: TProps) {
   return (
     <>
       <HeroSection id="hero-section" />
