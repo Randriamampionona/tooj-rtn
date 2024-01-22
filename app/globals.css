@@ -93,6 +93,18 @@ body,
   body {
     @apply bg-background text-foreground;
   }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-accent/25;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/10 hover:bg-primary/70 rounded-full transition-all duration-100;
+  }
 }
 
 @layer components {
