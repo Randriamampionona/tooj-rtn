@@ -79,6 +79,13 @@ const data = [
     icon: "/assets/icons/prestashop.png",
     rate: 65,
   },
+  {
+    id: "mongodb",
+    name: "MongoDB",
+    icon: "/assets/icons/mongodb.png",
+    rate: 75,
+    badge: "New"
+  },
 ];
 
 export default function Skills({ id }: TProps) {

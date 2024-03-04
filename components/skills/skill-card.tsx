@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Badge from "@/components/badge";
 
 type TProps = {
   skill: {
@@ -6,12 +7,14 @@ type TProps = {
     name: string;
     icon: string;
     rate: number;
+    badge?: string
   };
 };
 
 export default function SkillCard({ skill }: TProps) {
   return (
     <div className="relative group flex flex-col items-center justify-center w-full max-w-[4rem] bg-accent/30 rounded-md p-2 hover:scale-110 transition-all duration-150 cursor-default overflow-hidden shadow">
+      {!!skill.badge && <Badge text={skill.badge} className="right-0 top-0 group-hover:opacity-30"/>}
       <div>
         <Image
           alt={skill.name}

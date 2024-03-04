@@ -3,7 +3,7 @@ import { CalendarRange, Code2 } from "lucide-react";
 import Link from "next/link";
 import TechStack from "./tech-stack";
 import CardAction from "./card-action";
-import ProBadge from "./pro-badge";
+import Badge from "@/components/badge";
 
 type TProps = {
   project: TProject;
@@ -27,7 +27,7 @@ export default function ProjetcCard({ project }: TProps) {
           </div>
         )}
         <CardAction git_repo={project.git_repo} url={project.url} />
-        {project.isPro && <ProBadge />}
+        {project.isPro && <Badge text={"Pro"} className="top-1 right-1 group-hover:opacity-30"/>}
       </div>
 
       {/* footer */}
