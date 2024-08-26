@@ -19,7 +19,7 @@ export default function AboutMe({ id }: TProps) {
           <div className="flex items-center justify-center bg-gradient-to-r from-pink-600 to-orange-600 w-96 h-96 rounded-blob -z-10 overflow-hidden">
             <figure className="relative w-[25rem] h-[25rem] mx-auto">
               <Image
-                src="/assets/me.png"
+                src="/assets/me_.png"
                 alt="profile image"
                 layout="fill"
                 priority
